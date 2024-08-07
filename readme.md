@@ -80,7 +80,7 @@ For more detailed documentation on using the EpicChain Debug Wizard with Visual 
 
 Thank you for choosing the EpicChain Debug Wizard! Your input is invaluable to us, and I’m eager to hear what you think about the tool.
 
-If you find the EpicChain Debug Wizard helpful, please share your feedback on [Twitter](https://twitter.com/devhawk), [email](mailto:harry@epic-chain.org), or join us on the [EpicChain Discord server](https://discord.gg/G5WEPwC). Positive feedback not only motivates our team but also helps raise awareness about the tool.
+If you find the EpicChain Debug Wizard helpful, please share your feedback on [Twitter](https://twitter.com/epicchainlabs), [email](mailto:harry@epic-chain.org), or join us on the [EpicChain Discord server](https://discord.com/invite/tzxDUxnYT8). Positive feedback not only motivates our team but also helps raise awareness about the tool.
 
 If you encounter any issues or have suggestions for improvements, please file them in our [GitHub repository](https://github.com/epicchainlabs/epicchain-debug-wizard/issues). While I’m available via Twitter, Discord, and email, GitHub issues are the best way to track and manage feedback. Don’t hesitate to submit an issue if there’s anything you think could be improved or if there’s a feature you’d like to see.
 
