@@ -1,139 +1,93 @@
-# Neo Smart Contract Debugger
+# EpicChain Debug Wizard
 
-[![](https://github.com/neo-project/neo-debugger/actions/workflows/build-vscode.yml/badge.svg)](https://github.com/neo-project/neo-debugger/actions)
+[![Build Status](https://github.com/epicchainlabs/epicchain-debug-wizard/actions/workflows/build-vscode.yml/badge.svg)](https://github.com/epicchainlabs/epicchain-debug-wizard/actions)
 
-> Note, the Neo Smart Contract Debugger **DOES NOT** use the same versioning scheme as the core Neo platform.
-> For example, Debugger v3.4 is for Neo v3.3. Reasoning for the debugger versioning strategy are
-> [explained here](https://github.com/neo-project/neo-debugger#versioning-strategy)
+## Overview
 
-The Neo Smart Contract Debugger enables Neo developers to debug their smart contracts
-in Visual Studio and Visual Studio Code. It is built on the same [virtual machine](https://github.com/neo-project/neo-vm)
-as the [core Neo project](https://github.com/neo-project/neo) to ensure maximum compatibility
-between the debugger and how contracts will execute in production.
+Welcome to the EpicChain Debug Wizard! This advanced debugging tool is designed specifically for developers working with EpicChain smart contracts. It provides robust capabilities for identifying and resolving issues in your smart contracts, offering a seamless experience within Visual Studio and Visual Studio Code.
 
-Neo supports writing smart contracts in a variety of languages. However, the
-debugger needs the smart contract complier to emit additional information the
-debugger uses to map Neo Virtual Machine instructions back to source code.
-The debug information format is [fully documented](https://github.com/ngdseattle/design-notes/blob/master/NDX-DN11%20-%20NEO%20Debug%20Info%20Specification.md#v10-format).
-This format is supported by a variety of Neo smart contract compilers including 
+The EpicChain Debug Wizard leverages the same virtual machine technology as the core EpicChain platform to ensure full compatibility and accurate debugging. Our goal is to help you build, test, and deploy EpicChain smart contracts with confidence.
 
-* [NCCS (C#)](https://github.com/neo-project/neo-devpack-dotnet)
-* [neow3j (Java/Kotlin/Android)](https://neow3j.io)
-* [neo-boa (Python)](https://github.com/CityOfZion/neo-boa)
-* [NeoGo (GoLang)](https://github.com/nspcc-dev/neo-go)
-* [NEO•ONE (TypeScript)](https://neo-one.io)
+## Key Features
+
+- **Seamless Integration**: Debug your EpicChain smart contracts directly within Visual Studio and Visual Studio Code.
+- **Comprehensive Debugging**: Offers a range of debugging tools and features, including breakpoints, variable inspection, and step-by-step execution.
+- **Compatibility**: Built on the same virtual machine as the core EpicChain platform, ensuring consistency between debugging and production environments.
+- **Multi-Language Support**: Supports smart contracts written in various languages, with necessary compilers emitting debug information.
 
 ## Versioning Strategy
 
-As of March 2022, the Neo Smart Contract Debugger project has adopted 
-[VS Code recommended guidance](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#prerelease-extensions)
-for version numbers. This will allow the VS Code Marketplace to offer production and pre-release
-versions of this extension. Developers will be able to choose which version to install and VS Code
-will automatically keep the extension up to date.
+Our versioning strategy for the EpicChain Debug Wizard follows a structured approach to ensure clarity and consistency:
 
-Going forward, the minor version of this extension will be even for production releases and odd
-for preview releases. The first production release under this new versioning strategy will ve
-v3.2. The first pre-release of this extension will be v3.3.
-
-> Note, this project uses NerdBank Git Versioning to manage release version numbers.
-> As such, patch versions of public releases will typically not be sequential. 
+- **Version Scheme**: The debugger versions do not necessarily match the EpicChain core platform versions. For instance, Debugger v3.4 may correspond to EpicChain v3.3. For detailed information on our versioning strategy, please refer to [this document](https://github.com/epicchainlabs/epicchain-debug-wizard#versioning-strategy).
+- **Pre-Release Versions**: We follow [VS Code recommended guidance](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#prerelease-extensions) for version numbers, allowing the marketplace to offer both production and pre-release versions. Minor versions will be even for production releases and odd for preview releases. 
 
 ## Installation
 
-The Neo Smart Contract Debugger requires a [.NET runtime](https://dotnet.microsoft.com/download/dotnet)
-to be installed. The version of .NET Core needed depends on the version of the Neo
-Smart Contract Debugger.
+### System Requirements
 
-|Neo Smart Contract Debugger Version|.NET Core Version|
-|-----------------------------------|-----------------|
-| v3.1 and later | [v6.0](https://dotnet.microsoft.com/download/dotnet/6.0) (for Neo N3 contracts) <br /> [v3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) (for Neo Legacy Contracts) |
-| v3.0 | [v5.0](https://dotnet.microsoft.com/download/dotnet/5.0) (for Neo N3 contracts) <br /> [v3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) (for Neo Legacy Contracts) |
-| v2.0 (unsupported) | [v5.0](https://dotnet.microsoft.com/download/dotnet/5.0) (for Neo N3 contracts) <br /> [v3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) (for Neo Legacy Contracts) |
-| v1.0 | [v3.1](https://dotnet.microsoft.com/download/dotnet/3.1) |
-| v0.9 (unsupported) | [v3.0](https://dotnet.microsoft.com/download/dotnet/3.0) |
-| v0.5 (unsupported) | [v2.2](https://dotnet.microsoft.com/download/dotnet/2.2) |
+The EpicChain Debug Wizard requires a .NET runtime to function. The required .NET Core version depends on the version of the Debug Wizard you are using:
 
-### Visual Studio Code 
+| EpicChain Debug Wizard Version | .NET Core Version |
+|--------------------------------|-------------------|
+| v3.1 and later                  | [v6.0](https://dotnet.microsoft.com/download/dotnet/6.0) (for EpicChain contracts) <br /> [v3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) (for EpicChain Legacy Contracts) |
+| v3.0                            | [v5.0](https://dotnet.microsoft.com/download/dotnet/5.0) (for EpicChain contracts) <br /> [v3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) (for EpicChain Legacy Contracts) |
+| v2.0 (unsupported)              | [v5.0](https://dotnet.microsoft.com/download/dotnet/5.0) (for EpicChain contracts) <br /> [v3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) (for EpicChain Legacy Contracts) |
+| v1.0                            | [v3.1](https://dotnet.microsoft.com/download/dotnet/3.1) |
+| v0.9 (unsupported)              | [v3.0](https://dotnet.microsoft.com/download/dotnet/3.0) |
+| v0.5 (unsupported)              | [v2.2](https://dotnet.microsoft.com/download/dotnet/2.2) |
 
-The Neo Smart Contract Debugger for Visual Studio Code can be installed via the
-[Visual Studio Code Marketplace](https://marketplace.visualstudio.com/vscode). It can be
-installed [by itself](https://marketplace.visualstudio.com/items?itemName=ngd-seattle.neo-contract-debug)
-or as part of the [Neo Blockchain Toolkit](https://marketplace.visualstudio.com/items?itemName=ngd-seattle.neo-blockchain-toolkit).
+### Visual Studio Code Installation
 
-The Neo Smart Contract Debugger requires a [.NET runtime](https://dotnet.microsoft.com/download/dotnet-core)
-to be installed. The version of .NET Core needed depends on the version of the Neo
-Smart Contract Debugger.
-
-As of version 2.0, the Neo Smart Contract Debugger for Visal Studio Code supports both 
-[Neo N3 and Neo Legacy](https://medium.com/neo-smart-economy/introducing-neo-n3-the-next-evolution-of-the-neo-blockchain-b2960c4def6e).
+1. **Marketplace Installation**: Install the EpicChain Debug Wizard from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/vscode).
+   - **Direct Installation**: [Install directly](https://marketplace.visualstudio.com/items?itemName=epic-chain.epic-debugger).
+   - **Part of Toolkit**: Alternatively, you can install it as part of the [EpicChain Blockchain Toolkit](https://marketplace.visualstudio.com/items?itemName=epic-chain.epic-blockchain-toolkit).
+   
+2. **Requirements**: Ensure you have the appropriate [.NET runtime](https://dotnet.microsoft.com/download/dotnet-core) installed, as specified above.
 
 ### Ubuntu Installation
 
-Using the checkpoint functionality on Ubuntu requires installing libsnappy-dev and libc6-dev via apt-get.
+For Ubuntu users, additional packages are required:
 
-``` shell
-> sudo apt install libsnappy-dev libc6-dev -y
+```shell
+sudo apt install libsnappy-dev libc6-dev -y
 ```
 
-### MacOS Installation
+### macOS Installation
 
-Using the checkpoint functionality on MacOS requires installing rocksdb via [Homebrew](https://brew.sh/)
+On macOS, install rocksdb via [Homebrew](https://brew.sh/):
 
-``` shell
-> brew install rocksdb
+```shell
+brew install rocksdb
 ```
 
-### Install Preview Releases
+### Installing Preview Releases
 
-The Neo Smart Contract Debugger has a public [build server](https://dev.azure.com/ngdenterprise/Build/_build?definitionId=4&_a=summary).
-You can install preview builds of the debugger by navigating to the build you wish to install,
-pressing the "Artifacts" button in the upper right hand corner and downloading the VSIX-package
-artifact. The artifact is a zip file containing the debugger VSIX file, which can be installed
-manually. For more information on installing VSIX extensions in VSCode, please see the 
-[official VSCode docs](https://code.visualstudio.com/docs/editor/extension-gallery#_install-from-a-vsix).
+1. **Build Server**: Access preview builds from our [public build server](https://dev.azure.com/epic-chain/Build/_build?definitionId=4&_a=summary).
+2. **Download VSIX**: Navigate to the build you want, click "Artifacts" in the upper-right corner, and download the VSIX-package artifact.
+3. **Install Manually**: Install the VSIX file manually in VSCode. For installation instructions, refer to the [official VSCode documentation](https://code.visualstudio.com/docs/editor/extension-gallery#_install-from-a-vsix).
 
-### Visual Studio
+### Visual Studio Installation
 
-The Neo Smart Contract Debugger for Visual Studio is currently in preview.
-To install it, download a recent release of neodebug-vs-{version}.vsix from
-the [GitHub release](https://github.com/neo-project/neo-debugger/releases) page
-to your local machine then double click on the file. 
+1. **Download VSIX**: Obtain the latest release of the EpicChain Debug Wizard for Visual Studio from the [GitHub release page](https://github.com/epicchainlabs/epicchain-debug-wizard/releases).
+2. **Install**: Double-click the downloaded .vsix file to install it.
 
-The Neo Smart Contract Debugger for Visual Studio requires Visual Studio 2019
-Community, Professional or Enterprise. It has not been tested with Visual
-Studio 2022 preview releases. Additionally, The Neo Smart Contract Debugger 
-for Visual Studio requires [.NET v5.0](https://dotnet.microsoft.com/download/dotnet/5.0)
-in order to debug Neo N3 contracts as described above. Debugging Neo Legacy contracts
-is not supported in the Neo Smart Contract Debugger for Visual Studio.
+The debugger requires Visual Studio 2019 (Community, Professional, or Enterprise). Note that Visual Studio 2022 preview releases have not been tested. Additionally, you’ll need [.NET v5.0](https://dotnet.microsoft.com/download/dotnet/5.0) for debugging EpicChain contracts.
 
-[Additional documentation](docs/visual-studio.md) on using The Neo Smart Contract Debugger 
-for Visual Studio is available.
+For more detailed documentation on using the EpicChain Debug Wizard with Visual Studio, refer to [this guide](docs/visual-studio.md).
 
 ## A Message from the Engineer
 
-Thanks for checking out the Neo Smart Contract Debugger!
-I am eager to hear your opinion of the product.
+Thank you for choosing the EpicChain Debug Wizard! Your input is invaluable to us, and I’m eager to hear what you think about the tool.
 
-If you like the debugger, please let me know on [Twitter](https://twitter.com/devhawk),
-[email](mailto:harry@ngdenterprise.com) or the [Neo Discord server](https://discord.gg/G5WEPwC).
+If you find the EpicChain Debug Wizard helpful, please share your feedback on [Twitter](https://twitter.com/devhawk), [email](mailto:harry@epic-chain.org), or join us on the [EpicChain Discord server](https://discord.gg/G5WEPwC). Positive feedback not only motivates our team but also helps raise awareness about the tool.
 
-If there are things about the debugger you don't like, please file issues in our
-[GitHub repo](https://github.com/neo-project/neo-debugger/issues). You can hit me up on
-Twitter, Discord or email as well, but GitHub issues are how we track bugs and new
-features. Don't be shy - file an issue if there is anything you'd like to see changed
-in the product.
+If you encounter any issues or have suggestions for improvements, please file them in our [GitHub repository](https://github.com/epicchainlabs/epicchain-debug-wizard/issues). While I’m available via Twitter, Discord, and email, GitHub issues are the best way to track and manage feedback. Don’t hesitate to submit an issue if there’s anything you think could be improved or if there’s a feature you’d like to see.
 
-Most software is built by teams of people. However, the Neo Smart Contract Debugger
-so far has been a solo effort. I'm looking forward to having other folks contribute
-in the future, but so far it's just been me. That means that the debugger has been
-designed around my experiences and my perspective. I can't help it, my perspective
-is the only one I have! :) So while I find the debugger intuitive, I realize that
-you may not feel the same. Please let me know if this is the case! I didn't build
-the Neo Smart Contract Debugger for me, I built it for the Neo developer community
-at large. So if there are changes we can make to make it more accessible, intuitive,
-easier to use or just flat-out better - I want to hear about them.
+Although the EpicChain Debug Wizard has primarily been a solo project up to this point, I’m excited about the prospect of future contributions and collaborations. The tool has been designed from my perspective, but I understand that other viewpoints are crucial. I built this debugger to serve the EpicChain developer community, and I’m committed to making it as accessible and effective as possible. Your insights and contributions will be key to achieving this goal.
 
-Thanks again for checking out the Neo Smart Contract Debugger. I look forward to
-hearing from you.
+Thank you again for your interest in the EpicChain Debug Wizard. I look forward to your feedback and working together to make this tool the best it can be.
 
-\- Harry Pierson (aka [DevHawk](http://devhawk.net)), Chief Architect ngd enterprise
+Best regards,
+
+\- [xmoohad], Chief Architect EpicChain
